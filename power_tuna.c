@@ -30,8 +30,6 @@
 #define BOOSTPULSE_PATH "/sys/devices/system/cpu/cpufreq/interactive/boostpulse"
 
 #define MAX_BUF_SZ  10
-#define ON 1
-#define OFF 0
 
 /* initialize to something safe */
 static char screen_off_max_freq[MAX_BUF_SZ] = "700000";
@@ -97,7 +95,6 @@ static void tuna_power_init(struct power_module *module)
                 "99");
     sysfs_write("/sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay",
                 "80000");
-    last_state = ON;
 }
 
 static int boostpulse_open(struct tuna_power_module *tuna)
